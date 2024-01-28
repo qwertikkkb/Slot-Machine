@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170DAB132B66D238003C24CA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170DAB122B66D238003C24CA /* Extensions.swift */; };
 		17F7E4E12B66BD8900146A02 /* Slot_MachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7E4E02B66BD8900146A02 /* Slot_MachineApp.swift */; };
 		17F7E4E32B66BD8900146A02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7E4E22B66BD8900146A02 /* ContentView.swift */; };
 		17F7E4E52B66BD8B00146A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F7E4E42B66BD8B00146A02 /* Assets.xcassets */; };
@@ -19,9 +20,12 @@
 		17F7E4FB2B66C03500146A02 /* riseup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17F7E4F32B66C03500146A02 /* riseup.mp3 */; };
 		17F7E4FC2B66C03500146A02 /* casino-chips.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17F7E4F42B66C03500146A02 /* casino-chips.mp3 */; };
 		17F7E4FD2B66C03500146A02 /* high-score.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 17F7E4F52B66C03500146A02 /* high-score.mp3 */; };
+		17F7E5022B66C4F400146A02 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7E5012B66C4F400146A02 /* LogoView.swift */; };
+		17F7E5042B66C57400146A02 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7E5032B66C57400146A02 /* Modifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		170DAB122B66D238003C24CA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		17F7E4DD2B66BD8900146A02 /* Slot Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F7E4E02B66BD8900146A02 /* Slot_MachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot_MachineApp.swift; sourceTree = "<group>"; };
 		17F7E4E22B66BD8900146A02 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +39,8 @@
 		17F7E4F32B66C03500146A02 /* riseup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = riseup.mp3; sourceTree = "<group>"; };
 		17F7E4F42B66C03500146A02 /* casino-chips.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "casino-chips.mp3"; sourceTree = "<group>"; };
 		17F7E4F52B66C03500146A02 /* high-score.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "high-score.mp3"; sourceTree = "<group>"; };
+		17F7E5012B66C4F400146A02 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		17F7E5032B66C57400146A02 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +75,6 @@
 			children = (
 				17F7E5002B66C05A00146A02 /* Helpers */,
 				17F7E4FE2B66C04200146A02 /* Sounds */,
-				17F7E4FF2B66C04F00146A02 /* Views */,
 				17F7E4E42B66BD8B00146A02 /* Assets.xcassets */,
 				17F7E4E02B66BD8900146A02 /* Slot_MachineApp.swift */,
 				17F7E4E62B66BD8B00146A02 /* Preview Content */,
@@ -104,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				17F7E4E22B66BD8900146A02 /* ContentView.swift */,
+				17F7E5012B66C4F400146A02 /* LogoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,6 +117,9 @@
 		17F7E5002B66C05A00146A02 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				17F7E5032B66C57400146A02 /* Modifiers.swift */,
+				17F7E4FF2B66C04F00146A02 /* Views */,
+				170DAB122B66D238003C24CA /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -193,7 +202,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				170DAB132B66D238003C24CA /* Extensions.swift in Sources */,
+				17F7E5042B66C57400146A02 /* Modifiers.swift in Sources */,
 				17F7E4E32B66BD8900146A02 /* ContentView.swift in Sources */,
+				17F7E5022B66C4F400146A02 /* LogoView.swift in Sources */,
 				17F7E4E12B66BD8900146A02 /* Slot_MachineApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
