@@ -114,6 +114,50 @@ struct ContentView: View {
                     
                     Spacer()
                     
+                    HStack {
+                         //Mark - BET 10
+                        HStack(alignment: .center, spacing: 10) {
+                            Image("gfx-casino-chips")
+                                .resizable()
+                                .opacity(0)
+                                .modifier(CasinoChipsModifier())
+                            
+                            Button(action: {
+                                //Do something
+                            }, label: {
+                                Text("10")
+                                    .fontWeight(.heavy)
+                                    .foregroundStyle(.yellow)
+                                    .modifier(BetNumberModifier())
+                                    .modifier(BetCapsuleModifire())
+                                    
+                            }
+                                
+                            )
+                         
+                        }
+                        
+                        //Mark - BET 20
+                       HStack(alignment: .center, spacing: 10) {
+                           Button(action: {
+                               //Do something
+                           }, label: {
+                               Text("20")
+                                   .fontWeight(.heavy)
+                                   .foregroundStyle(.white)
+                                   .modifier(BetNumberModifier())
+                                   .modifier(BetCapsuleModifire())
+                                   
+                           }
+                               
+                           )
+                           Image("gfx-casino-chips")
+                               .resizable()
+                               .opacity(1)
+                               .modifier(CasinoChipsModifier())
+                       }
+                    }
+                    
                 }//VSTack
                 .frame(height: 900)
                 
