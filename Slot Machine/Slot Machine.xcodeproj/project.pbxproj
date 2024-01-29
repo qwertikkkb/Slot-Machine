@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		170DAB132B66D238003C24CA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170DAB122B66D238003C24CA /* Extensions.swift */; };
+		170DAB152B682154003C24CA /* ReelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170DAB142B682154003C24CA /* ReelView.swift */; };
 		17F7E4E12B66BD8900146A02 /* Slot_MachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7E4E02B66BD8900146A02 /* Slot_MachineApp.swift */; };
 		17F7E4E32B66BD8900146A02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7E4E22B66BD8900146A02 /* ContentView.swift */; };
 		17F7E4E52B66BD8B00146A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F7E4E42B66BD8B00146A02 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		170DAB122B66D238003C24CA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		170DAB142B682154003C24CA /* ReelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelView.swift; sourceTree = "<group>"; };
 		17F7E4DD2B66BD8900146A02 /* Slot Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F7E4E02B66BD8900146A02 /* Slot_MachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot_MachineApp.swift; sourceTree = "<group>"; };
 		17F7E4E22B66BD8900146A02 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				17F7E4E22B66BD8900146A02 /* ContentView.swift */,
 				17F7E5012B66C4F400146A02 /* LogoView.swift */,
+				170DAB142B682154003C24CA /* ReelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				170DAB152B682154003C24CA /* ReelView.swift in Sources */,
 				170DAB132B66D238003C24CA /* Extensions.swift in Sources */,
 				17F7E5042B66C57400146A02 /* Modifiers.swift in Sources */,
 				17F7E4E32B66BD8900146A02 /* ContentView.swift in Sources */,

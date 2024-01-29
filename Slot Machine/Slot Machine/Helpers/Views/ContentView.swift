@@ -39,6 +39,7 @@ struct ContentView: View {
                                 .modifier(ScoreNumberModifier())
                             
                         }
+                        .offset(y: -200)
                         .modifier(ScoreContainerModifier())
                         
                         Spacer()
@@ -54,10 +55,61 @@ struct ContentView: View {
                                 .multilineTextAlignment(.leading)
                             
                         }
+                        .offset(y: -200)
                         .modifier(ScoreContainerModifier())
                     }
                     
                      //Mark - Slot machine
+                    VStack(alignment: .center, spacing: 0) {
+                         //Mark - REEL N1
+                        ZStack {
+                            ReelView()
+                                .offset(y: -500)
+                            Image("gfx-bell")
+                                .resizable()
+                                .modifier(ImageModifier())
+                                .offset(y: -500)
+                        }
+                        
+                        HStack(alignment: .center, spacing: 0) {
+                            //Mark - Reel N2
+                            ZStack {
+                                ReelView()
+                                    .offset(y: -500)
+                                Image("gfx-seven")
+                                    .resizable()
+                                    .modifier(ImageModifier())
+                                    .offset(y: -500)
+                            }
+                            
+                            Spacer()
+                            //Mark - Reel N3
+                            ZStack {
+                                ReelView()
+                                    .offset(y: -500)
+                                Image("gfx-cherry")
+                                    .resizable()
+                                    .modifier(ImageModifier())
+                                    .offset(y: -500)
+                            }
+                        }
+                        .frame(maxWidth: 500)
+                         //Mark - Spin Button
+                        Button( action: {
+                            print("Spin the reels")
+                        }) {
+                            Image("gfx-spin")
+                                .renderingMode(.original)
+                                .resizable()
+                                .modifier(ImageModifier())
+                               
+                        }
+                       
+                        
+                        
+                    } // Slot Machine
+                    .layoutPriority(2)
+                    
                      //Mark - Footer
                     
                     Spacer()
