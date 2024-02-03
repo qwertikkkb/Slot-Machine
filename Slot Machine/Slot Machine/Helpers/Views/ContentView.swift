@@ -8,7 +8,56 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
+    let symbols = ["gfx-bell", "gfx-cherry", "gfx-coin", "gfx-grape", "gfx-seven", "gfx-strawberry" ]
+    
+    @State private var highscore = 0
+    @State private var coins = 100
+    @State private var betAmmount = 10
+    @State private var reels: Array = [0, 1, 2]
     @State private var showingInfoView = false
+    
+     //Mark - Functions
+    
+    //Spin the reels
+    func spinReels() {
+//        reels[0] = Int.random(in: 0...symbols.count - 1)
+//        reels[1] = Int.random(in: 0...symbols.count - 1)
+//        reels[2] = Int.random(in: 0...symbols.count - 1)
+        reels = reels.map({ _ in
+            Int.random(in: 0...symbols.count - 1)
+        })
+     }
+    
+    //Check the winning
+    func checkWining() {
+        if reels[0] == reels[1] && reels[1] == reels[2] && reels[0] == reels[2] {
+            //Player wins
+            playerWins()
+            
+            //New HighScore
+            if coins > highscore {
+                newHighScore()
+            }
+        } else {
+            //Player Loses
+            playerLoses()
+        }
+    }
+    func playerWins() {
+        coins +=  betAmmount * 10
+    }
+    
+    func newHighScore() {
+        highscore = coins
+    }
+    
+    func playerLoses() {
+        coins -= betAmmount
+    }
+    //Game is over
+    
     
     var body: some View {
             ZStack {
@@ -25,7 +74,7 @@ struct ContentView: View {
                 VStack(alignment: .center, spacing: 5) {
                      //Mark - Header
                    LogoView()
-                        .offset(y: -280)
+                  
             
               
                     
@@ -36,19 +85,18 @@ struct ContentView: View {
                                 .scoreLabelStyle()
                                 .multilineTextAlignment(.trailing)
                             
-                            Text("100")
+                            Text("\(coins)")
                                 .scoreNumberStyle()
                                 .modifier(ScoreNumberModifier())
                             
                         }
-                        .offset(y: -200)
                         .modifier(ScoreContainerModifier())
                         
                         Spacer()
                         
                         HStack {
                             
-                            Text("200")
+                            Text("\(highscore)")
                                 .scoreNumberStyle()
                                 .modifier(ScoreNumberModifier())
                             
@@ -57,7 +105,6 @@ struct ContentView: View {
                                 .multilineTextAlignment(.leading)
                             
                         }
-                        .offset(y: -200)
                         .modifier(ScoreContainerModifier())
                     }
                     
@@ -66,39 +113,41 @@ struct ContentView: View {
                          //Mark - REEL N1
                         ZStack {
                             ReelView()
-                                .offset(y: -500)
-                            Image("gfx-bell")
+                            Image(symbols[reels[0]])
                                 .resizable()
                                 .modifier(ImageModifier())
-                                .offset(y: -500)
+                             
                         }
                         
                         HStack(alignment: .center, spacing: 0) {
                             //Mark - Reel N2
                             ZStack {
                                 ReelView()
-                                    .offset(y: -500)
-                                Image("gfx-seven")
+                                Image(symbols[reels[1]])
                                     .resizable()
                                     .modifier(ImageModifier())
-                                    .offset(y: -500)
+                           
                             }
                             
                             Spacer()
                             //Mark - Reel N3
                             ZStack {
                                 ReelView()
-                                    .offset(y: -500)
-                                Image("gfx-cherry")
+                                Image(symbols[reels[2]])
                                     .resizable()
                                     .modifier(ImageModifier())
-                                    .offset(y: -500)
+                                  
                             }
                         }
                         .frame(maxWidth: 500)
                          //Mark - Spin Button
                         Button( action: {
-                            print("Spin the reels")
+                          //Spin the reels
+                            self.spinReels()
+                            
+                            //Check winning
+                            self.checkWining()
+                
                         }) {
                             Image("gfx-spin")
                                 .renderingMode(.original)
@@ -170,7 +219,7 @@ struct ContentView: View {
                         print("reset the game")
                     }) {
                         Image(systemName: "arrow.triangle.2.circlepath.circle")
-                            .offset(y: 180)
+                           
                     }
                     .modifier(ButtonModifier()),
                     alignment: .topLeading
@@ -182,7 +231,7 @@ struct ContentView: View {
                         self.showingInfoView = true
                     }) {
                         Image(systemName: "info.circle")
-                            .offset(y: 180)
+                        
                           
                             
                             
