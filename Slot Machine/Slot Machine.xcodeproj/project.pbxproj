@@ -77,6 +77,7 @@
 		17F7E4DF2B66BD8900146A02 /* Slot Machine */ = {
 			isa = PBXGroup;
 			children = (
+				17F7E4FF2B66C04F00146A02 /* Views */,
 				17F7E5002B66C05A00146A02 /* Helpers */,
 				17F7E4FE2B66C04200146A02 /* Sounds */,
 				17F7E4E42B66BD8B00146A02 /* Assets.xcassets */,
@@ -124,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				17F7E5032B66C57400146A02 /* Modifiers.swift */,
-				17F7E4FF2B66C04F00146A02 /* Views */,
 				170DAB122B66D238003C24CA /* Extensions.swift */,
 			);
 			path = Helpers;

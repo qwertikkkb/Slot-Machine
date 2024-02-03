@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var betAmmount = 10
     @State private var reels: Array = [0, 1, 2]
     @State private var showingInfoView = false
+    @State private var isActiveBet10 = true
+    @State private var isActiveBet20 = false
     
      //Mark - Functions
     
@@ -55,6 +57,18 @@ struct ContentView: View {
     
     func playerLoses() {
         coins -= betAmmount
+    }
+    
+    func activateBet20() {
+        betAmmount = 20
+        isActiveBet20 = true
+        isActiveBet10 = false
+    }
+    
+    func activateBet10() {
+        betAmmount = 10
+       isActiveBet10 = true
+       isActiveBet20 = false
     }
     //Game is over
     
@@ -170,15 +184,15 @@ struct ContentView: View {
                         HStack(alignment: .center, spacing: 10) {
                             Image("gfx-casino-chips")
                                 .resizable()
-                                .opacity(0)
+                                .opacity(isActiveBet10 ? 1 : 0)
                                 .modifier(CasinoChipsModifier())
                             
                             Button(action: {
-                                //Do something
+                                self.activateBet10()
                             }, label: {
                                 Text("10")
                                     .fontWeight(.heavy)
-                                    .foregroundStyle(.yellow)
+                                    .foregroundStyle(isActiveBet10 ? Color("ColorYellow") : Color.white)
                                     .modifier(BetNumberModifier())
                                     .modifier(BetCapsuleModifire())
                                     
@@ -191,11 +205,11 @@ struct ContentView: View {
                         //Mark - BET 20
                        HStack(alignment: .center, spacing: 10) {
                            Button(action: {
-                               //Do something
+                               self.activateBet20()
                            }, label: {
                                Text("20")
                                    .fontWeight(.heavy)
-                                   .foregroundStyle(.white)
+                                   .foregroundStyle(isActiveBet20 ? Color("ColorYellow") : Color.white)
                                    .modifier(BetNumberModifier())
                                    .modifier(BetCapsuleModifire())
                                    
@@ -204,7 +218,7 @@ struct ContentView: View {
                            )
                            Image("gfx-casino-chips")
                                .resizable()
-                               .opacity(1)
+                               .opacity(isActiveBet20 ? 1 : 0)
                                .modifier(CasinoChipsModifier())
                        }
                     }
